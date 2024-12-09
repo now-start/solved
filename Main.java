@@ -17,7 +17,7 @@ public class Main {
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) {
-
+        
     }
 
     static class FastReader {
