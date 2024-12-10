@@ -1,69 +1,85 @@
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 import static java.lang.System.in;
+import static java.lang.System.out;
+
+/*
+    BAEKJOON {{number}} {{title}}
+    https://www.acmicpc.net/problem/{{number}}
+*/
 
 public class Main {
 
-    static FastReader scan = new FastReader();
-    static StringBuilder sb = new StringBuilder();
+    static FastIO io;
 
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) throws Exception {
+        io = new FastIO();
+        // start code
+
+        io.print();
     }
 
-    static class FastReader {
-
+    static class FastIO {
         BufferedReader br;
+        BufferedWriter bw;
         StringTokenizer st;
+        StringBuilder sb;
 
-        public FastReader() {
+        public FastIO() {
             br = new BufferedReader(new InputStreamReader(in));
+            bw = new BufferedWriter(new OutputStreamWriter(out));
+            sb = new StringBuilder();
         }
 
-        public FastReader(String s) throws FileNotFoundException {
-            br = new BufferedReader(new FileReader(new File(s)));
-        }
-
-        String next() {
+        String next() throws IOException {
             while (st == null || !st.hasMoreElements()) {
-                try {
-                    st = new StringTokenizer(br.readLine());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                st = new StringTokenizer(br.readLine());
             }
             return st.nextToken();
         }
 
-        int nextInt() {
+        int nextInt() throws IOException {
             return parseInt(next());
         }
 
-        long nextLong() {
+        long nextLong() throws IOException {
             return parseLong(next());
         }
 
-        double nextDouble() {
+        double nextDouble() throws IOException {
             return parseDouble(next());
         }
 
-        String nextLine() {
-            String str = "";
-            try {
-                str = br.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return str;
+        String nextLine() throws IOException {
+            return br.readLine();
+        }
+
+        FastIO append(Object str) {
+            sb.append(str);
+            return this;
+        }
+
+        FastIO appendln(Object str) {
+            sb.append(str).append("\n");
+            return this;
+        }
+
+        void print() throws IOException {
+            bw.write(sb.toString());
+            bw.flush();
+        }
+
+        void close() throws IOException {
+            br.close();
+            bw.close();
         }
     }
 }
