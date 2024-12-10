@@ -38,8 +38,8 @@ public class Main {
 
     static void back(int start, int depth) {
         if (depth == m) {
-            for (int i : result) {
-                io.append(i).append(" ");
+            for(int i : result) {
+                    io.append(i).append(" ");
             }
             io.append("\n");
             return;
