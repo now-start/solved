@@ -1,0 +1,14 @@
+{
+  "srcDirPrefix": {
+    "value": "p"
+  },
+  "mainCodeTemplate": {
+    "value": "import java.io.BufferedReader;\nimport java.io.BufferedWriter;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.io.OutputStreamWriter;\nimport java.util.StringTokenizer;\n\nimport static java.lang.Double.parseDouble;\nimport static java.lang.Integer.parseInt;\nimport static java.lang.Long.parseLong;\nimport static java.lang.System.in;\nimport static java.lang.System.out;\n\n/*\n    BAEKJOON {{number}} {{title}}\n    https://www.acmicpc.net/problem/{{number}}\n*/\n\npublic class Main {\n\n    static FastIO io;\n\n    public static void main(String[] args) throws Exception {\n        io = new FastIO();\n        // start code\n\n        io.print();\n    }\n\n    static class FastIO {\n        BufferedReader br;\n        BufferedWriter bw;\n        StringTokenizer st;\n        StringBuilder sb;\n\n        public FastIO() {\n            br = new BufferedReader(new InputStreamReader(in));\n            bw = new BufferedWriter(new OutputStreamWriter(out));\n            sb = new StringBuilder();\n        }\n\n        String next() throws IOException {\n            while (st == null || !st.hasMoreElements()) {\n                st = new StringTokenizer(br.readLine());\n            }\n            return st.nextToken();\n        }\n\n        int nextInt() throws IOException {\n            return parseInt(next());\n        }\n\n        long nextLong() throws IOException {\n            return parseLong(next());\n        }\n\n        double nextDouble() throws IOException {\n            return parseDouble(next());\n        }\n\n        String nextLine() throws IOException {\n            return br.readLine();\n        }\n\n        FastIO append(Object str) {\n            sb.append(str);\n            return this;\n        }\n\n        FastIO appendln(Object str) {\n            sb.append(str).append(\"\\n\");\n            return this;\n        }\n\n        void print() throws IOException {\n            bw.write(sb.toString());\n            bw.flush();\n        }\n\n        void print(Object str) throws IOException {\n            sb.append(str);\n            bw.write(sb.toString());\n            bw.flush();\n        }\n\n        void close() throws IOException {\n            br.close();\n            bw.close();\n        }\n    }\n}"
+  },
+  "markdownTemplate": {
+    "value": "# {{title}}\n\n> 문제 번호 : {{number}}  \n> 출처 : {{url}}\n\n| 메모리 제한 | 시간 제한 |\n|--------|-------|\n| {{memory_limit}} MB | {{time_limit}} 초 |\n\n## 문제 설명\n\n{{description}}\n\n"
+  },
+  "enableReadme": {
+    "value": "true"
+  }
+}
