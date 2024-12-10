@@ -77,6 +77,12 @@ public class Main {
             bw.flush();
         }
 
+        void print(Object str) throws IOException {
+            sb.append(str);
+            bw.write(sb.toString());
+            bw.flush();
+        }
+
         void close() throws IOException {
             br.close();
             bw.close();
