@@ -22,7 +22,6 @@ public class Main {
     static FastIO io;
     static int n;
     static int[][] map;
-    static boolean[] visit;
     static int result;
 
     public static void main(String[] args) throws Exception {
@@ -30,7 +29,6 @@ public class Main {
         // start code
         n = io.nextInt();
         map = new int[n][n];
-        visit = new boolean[5];
         result = Integer.MIN_VALUE;
 
         for (int i = 0; i < n; i++) {
@@ -43,7 +41,6 @@ public class Main {
         io.print(result);
     }
 
-    // 재귀적 최적화 (DFS 탐색)
     public static void back(int depth) {
         if (depth == 5) {
             for (int[] arr : map) {
