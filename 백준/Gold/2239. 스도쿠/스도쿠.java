@@ -46,7 +46,6 @@ public class Main {
             }
             io.print();
             System.exit(0);
-            return;
         }
 
         if (board[x][y] == 0) {
